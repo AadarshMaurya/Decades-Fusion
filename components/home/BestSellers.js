@@ -1,8 +1,15 @@
+'use client'
 import Image from "next/image"
 import Link from "next/link"
+import PrimaryBtn from '@/components/ui/button-primary/page'
+
 import { ShoppingBag, Eye } from "lucide-react"
 
 export default function BestSellers() {
+
+  const handleClick =()=>{
+    console.log("hello Aadarsh")
+  }
   const products = [
     {
       id: 1,
@@ -77,7 +84,7 @@ export default function BestSellers() {
               <p className="text-gray-700 mb-3">${product.price.toFixed(2)}</p>
 
               <div className="flex gap-2">
-                <button className="flex-1 btn-secondary text-sm py-2">Add to Cart</button>
+                <PrimaryBtn label="Add to Cart" onClick={handleClick}/>
                 <Link href={`/products/${product.id}`} className="flex-1 btn-primary text-sm py-2">
                   View Details
                 </Link>
